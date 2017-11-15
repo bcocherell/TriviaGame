@@ -22,10 +22,11 @@ var question3 = {
   gif: '<iframe src="https://giphy.com/embed/roYhkwx4lDhEQ" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/mlb-edwin-edwing-roYhkwx4lDhEQ">via GIPHY</a></p>'
 };
 
-var count = 1;
+var questions = [question1, question2, question3];
+
+var count = 0;
 var question;
 var timerIntervalId;
-var totalQuestions = 3;
 var correct = 0;
 var wrong = 0;
 var unanswered = 0;
@@ -73,7 +74,7 @@ var timer = {
 
 function displayQuestion() {
 
-    question = window['question' + count];
+  question = questions[count];
 	$('#question').text(question.text);
 
 	$('#answers').empty();
@@ -113,7 +114,7 @@ function nextQuestion(a) {
 
     count++;
 
-  	if (count > totalQuestions) {
+  	if (count === questions.length) {
     	setTimeout(totalScore, 2000);
   	}
   	else {
@@ -125,7 +126,7 @@ function totalScore() {
 
 	$('#answers').empty();
 	var div = $('<div>');
-	div.text('You scored: ' + correct + '/' + totalQuestions);
+	div.text('You scored: ' + correct + '/' + questions.length);
 	$('#answers').append(div);
 }
 
