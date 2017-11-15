@@ -80,8 +80,8 @@ function displayQuestion() {
 	$('#answers').empty();
 
 	for (var j = 0; j < question.answers.length; j++){
-		var answer = $('<div>');
-		answer.addClass('answer');
+		var answer = $('<button>');
+		answer.addClass('list-group-item answer');
 		answer.text(question.answers[j]);
 		answer.attr("data-answervalue", j);
 		$('#answers').append(answer);
