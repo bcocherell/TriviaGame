@@ -5,11 +5,8 @@
  * Globals
  */
 
-/* Links */
-a,
-a:focus,
-a:hover {
-  color: #fff;
+.img-thumbnail {
+  max-width: 300px;
 }
 
 /* Custom default button */
